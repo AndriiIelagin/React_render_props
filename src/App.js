@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+// import MouseTracker from './components/render-props/MouseTracker'
+import withMouse from './components/render-props/withMouse'
+import Cat from './components/render-props/Cat'
 
 class App extends Component {
-  render() {
+  render () {
+    const Comp = withMouse(Cat)
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className='App'>
+        {/* <MouseTracker /> */}
+        <Comp />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
